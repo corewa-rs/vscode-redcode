@@ -11,5 +11,5 @@ code --install-extension <path-to-redcode>/redcode-<version>.vsix
 ## Install from VS Code Marketplace
 
 ```shell
-code --install-extension ian-h-chamberlain.redcode
+code --install-extension corewa-rs.redcode
 ```
