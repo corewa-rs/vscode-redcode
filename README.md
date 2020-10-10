@@ -1,7 +1,7 @@
 # Redcode Syntax highlighting
 
-[![Latest Release](https://img.shields.io/visual-studio-marketplace/v/ian-h-chamberlain.redcode?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=ian-h-chamberlain.redcode)
-[![Build Status](https://img.shields.io/github/workflow/status/ian-h-chamberlain/corewa_rs/ci/master)](https://github.com/ian-h-chamberlain/corewa_rs/actions)
+[![Latest Release](https://img.shields.io/visual-studio-marketplace/v/corewa-rs.redcode?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=corewa-rs.redcode)
+[![Build Status](https://img.shields.io/github/workflow/status/corewa-rs/corewa_rs/ci/develop)](https://github.com/corewa-rs/vscode-redcode/actions)
 
 Basic syntax highlighting for Redcode, the language used in [Core Wars](https://corewa.rs).
 

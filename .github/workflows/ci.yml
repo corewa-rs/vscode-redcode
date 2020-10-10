@@ -1,0 +1,34 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build_redcode:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - name: Install dependencies
+      run: npm install --locked
+    - name: Build extension
+      run: npm run build
+    - name: Verify the build did not modify any files
+      run: git diff --exit-code HEAD -- .

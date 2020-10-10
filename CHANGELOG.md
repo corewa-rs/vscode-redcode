@@ -7,6 +7,13 @@ Format based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## Unreleased
 
+## [0.2.0] - 2020-10-09
+
+### Changed
+
+- Migrate to the `corewa-rs` VSCode publisher and Github organization
+- Add LICENSE file
+
 ## [0.1.1] - 2020-07-19
 
 ### Fixed
