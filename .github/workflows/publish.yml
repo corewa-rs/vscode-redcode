@@ -1,4 +1,4 @@
-name: publish_redcode
+name: publish
 
 on:
   release:
@@ -28,14 +28,14 @@ jobs:
       run: npm install --locked
 
     - name: Package extension
-      run: npm run package -- --out ${{ steps.release.outputs.tag_name }}.vsix
+      run: npm run package -- --out redcode-${{ steps.release.outputs.tag_name }}.vsix
 
     - name: Upload extension to Github
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.release.outputs.upload_url }}
-        asset_path: ${{ steps.release.outputs.tag_name }}.vsix
-        asset_name: ${{ steps.release.outputs.tag_name }}.vsix
+        asset_path: redcode-${{ steps.release.outputs.tag_name }}.vsix
+        asset_name: redcode-${{ steps.release.outputs.tag_name }}.vsix
         asset_content_type: application/vsix
 
     - name: Publish extension to VSCode marketplace
