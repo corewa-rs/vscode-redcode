@@ -5,42 +5,40 @@ on:
     types:
       - published
 
-defaults:
-  run:
-    working-directory: redcode
-
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   publish:
-    if: startsWith(github.ref, 'refs/tags/redcode-v')
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+
     - name: Get Release
-      id: get_release
-      uses: bruceadams/get-release@v1.2.0
-    - name: Get release tag
-      id: get_version
-      run: echo "::set-output name=package::$(echo ${{ github.ref }} | cut -d '/' -f 3)"
+      id: release
+      uses: bruceadams/get-release@v1.2.2
+
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 10.x
+        node-version: 14.x
+
     - name: Install dependencies
       run: npm install --locked
+
     - name: Package extension
-      run: npm run package -- --out ${{ steps.get_version.outputs.package }}.vsix
+      run: npm run package -- --out ${{ steps.release.outputs.tag_name }}.vsix
+
     - name: Upload extension to Github
       uses: actions/upload-release-asset@v1
       with:
-        upload_url: ${{ steps.get_release.outputs.upload_url }}
-        asset_path: redcode/${{ steps.get_version.outputs.package }}.vsix
-        asset_name: ${{ steps.get_version.outputs.package }}.vsix
+        upload_url: ${{ steps.release.outputs.upload_url }}
+        asset_path: ${{ steps.release.outputs.tag_name }}.vsix
+        asset_name: ${{ steps.release.outputs.tag_name }}.vsix
         asset_content_type: application/vsix
+
     - name: Publish extension to VSCode marketplace
-      run: npm run deploy
+      run: npm run publish
       env:
         VSCE_PAT: ${{ secrets.VSCE_PAT }}

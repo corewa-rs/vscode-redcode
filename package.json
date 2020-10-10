@@ -34,7 +34,7 @@
         ],
         "extensions": [
           ".red",
-          ".redcode",
+          ".redcode"
         ],
         "configuration": "./language-configuration.json"
       }
@@ -50,7 +50,7 @@
   "scripts": {
     "build": "npx js-yaml syntaxes/redcode.tmLanguage.yaml > syntaxes/redcode.tmLanguage.json",
     "package": "vsce package",
-    "deploy": "vsce publish"
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "js-yaml": "^3.14.0",
