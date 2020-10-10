@@ -9,6 +9,10 @@ Format based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [0.2.0] - 2020-10-09
 
+### Added
+
+- Enable extension for `.redcode` files by default
+
 ### Changed
 
 - Migrate to the `corewa-rs` VSCode publisher and Github organization

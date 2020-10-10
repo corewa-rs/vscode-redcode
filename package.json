@@ -33,7 +33,8 @@
           "redcode"
         ],
         "extensions": [
-          ".red"
+          ".red",
+          ".redcode",
         ],
         "configuration": "./language-configuration.json"
       }
