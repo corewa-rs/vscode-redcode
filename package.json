@@ -1,13 +1,13 @@
 {
   "name": "redcode",
   "displayName": "redcode",
-  "description": "Language per REDCODE Reference Standard: ICWS'94 draft (extended)",
-  "version": "0.2.0",
+  "description": "Language from the REDCODE Reference Standard: ICWS'94 draft (extended)",
+  "version": "0.2.1",
   "license": "MIT",
   "publisher": "corewa-rs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/corewa-rs/corewa_rs.git",
+    "url": "https://github.com/corewa-rs/vscode-redcode.git",
     "directory": "redcode"
   },
   "engines": {
@@ -54,6 +54,6 @@
   },
   "devDependencies": {
     "js-yaml": "^3.14.0",
-    "vsce": "^1.81.1"
+    "@vscode/vsce": "^2.15.0"
   }
 }
