@@ -7,6 +7,14 @@ Format based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## Unreleased
 
+## [0.2.1] - 2023-04-18
+
+There are no functional changes in this release.
+
+### Changed
+
+- Update repo link, build badge etc.
+
 ## [0.2.0] - 2020-10-09
 
 ### Added
